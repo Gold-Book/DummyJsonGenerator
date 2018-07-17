@@ -1,0 +1,19 @@
+type: dummy-json-generator-app
+version: 1.0.0
+
+components:
+  createFakerData:
+    type: aws-lambda
+    inputs:
+      memory: 128
+      timeout: 5
+      handler: handler.HandleLambdaEvent
+  fakerApi:
+    type: rest-api
+    inputs:
+      gateway: aws-apigateway
+      routes:
+        /{id}:
+          get:
+            function: ${createFakerData}
+            cors: true

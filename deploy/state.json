@@ -1,0 +1,84 @@
+{
+  "$": {
+    "serviceId": "6cnb97qoml"
+  },
+  "dummy-json-generator-app": {
+    "instanceId": "6cnb97qoml-wg83fa7e"
+  },
+  "dummy-json-generator-app:fakeFunction": {
+    "instanceId": "6cnb97qoml-16inp011"
+  },
+  "dummy-json-generator-app:productsApi": {
+    "instanceId": "6cnb97qoml-s8eepj3t"
+  },
+  "dummy-json-generator-app:fakeFunction:defaultRole": {
+    "instanceId": "6cnb97qoml-jes2pwcg",
+    "type": "aws-iam-role",
+    "internallyManaged": true,
+    "rootPath": "../../../../../usr/local/lib/node_modules/serverless-components/registry/aws-iam-role",
+    "inputs": {
+      "name": "func-6cnb97qoml-16inp011-execution-role",
+      "service": "lambda.amazonaws.com"
+    },
+    "state": {
+      "arn": "arn:aws:iam::020067470863:role/func-6cnb97qoml-16inp011-execution-role",
+      "service": "lambda.amazonaws.com",
+      "policy": {
+        "arn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      },
+      "name": "func-6cnb97qoml-16inp011-execution-role"
+    }
+  },
+  "dummy-json-generator-app:createFakerData": {
+    "type": "aws-lambda",
+    "state": {}
+  },
+  "dummy-json-generator-app:fakerApi": {
+    "type": "rest-api",
+    "state": {}
+  },
+  "dummy-json-generator-app:createFakerData:defaultRole": {
+    "instanceId": "6cnb97qoml-vyr09wwr",
+    "type": "aws-iam-role",
+    "internallyManaged": true,
+    "rootPath": "../../../../../usr/local/lib/node_modules/serverless-components/registry/aws-iam-role",
+    "inputs": {
+      "name": "func-6cnb97qoml-afoc4uw9-execution-role",
+      "service": "lambda.amazonaws.com"
+    },
+    "state": {
+      "name": null,
+      "arn": null,
+      "service": null,
+      "policy": null
+    }
+  },
+  "dummy-json-generator-app:fakerApi:iam": {
+    "instanceId": "6cnb97qoml-pta6kn02",
+    "type": "aws-iam-role",
+    "internallyManaged": true,
+    "rootPath": "../../../../../usr/local/lib/node_modules/serverless-components/registry/aws-iam-role",
+    "inputs": {
+      "name": "api-6cnb97qoml-xkf3rj2x-iam-role",
+      "service": "apigateway.amazonaws.com"
+    },
+    "state": {
+      "name": null,
+      "arn": null,
+      "service": null,
+      "policy": null
+    }
+  },
+  "dummy-json-generator-app:fakerApi:apig": {
+    "instanceId": "6cnb97qoml-6qq4j4p0",
+    "type": "aws-apigateway",
+    "internallyManaged": true,
+    "rootPath": "../../../../../usr/local/lib/node_modules/serverless-components/registry/aws-apigateway",
+    "inputs": {
+      "name": "api-6cnb97qoml-xkf3rj2x",
+      "roleArn": "arn:aws:iam::020067470863:role/api-6cnb97qoml-xkf3rj2x-iam-role-6cnb97qoml-xkf3rj2x",
+      "routes": {}
+    },
+    "state": {}
+  }
+}
