@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+  sls-go:
+    image: sls-golang
+    env_file: .env
+    tty: true
+    ports:
+      - $_LAMBDA_SERVER_PORT:9001
+    volumes:
+        - ./../:/application
