@@ -1,0 +1,23 @@
+version: '3'
+services:
+    local:
+        build:
+            context: .
+            dockerfile: Dockerfile_Local
+        working_dir: /root/dev
+        volumes:
+            - ../:/root/dev
+            - /var/run/docker.sock:/var/run/docker.sock # sam local required docker
+        environment:
+          - APPLICATION=$PWD/../application # ホスト側のdockerを使用しているため、localコンテナのディレクトリではなく、ホスト側のディレクトリがmountされる
+        ports:
+            - 3000:3000
+        command: ./container/shell/local.sh
+    go:
+        build:
+            context: .
+            dockerfile: Dockerfile_go
+        working_dir: /go/src/DummyJsonGenerator/
+        volumes:
+            - ../:/go/src/DummyJsonGenerator/
+        command: bash /go/src/DummyJsonGenerator/container/shell/go.sh
