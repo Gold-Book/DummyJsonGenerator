@@ -1,3 +1,6 @@
 FROM python:3.6-jessie
 
 RUN pip install awscli aws-sam-cli
+
+RUN wget -q -O /usr/local/bin/waitforit https://github.com/maxcnunes/waitforit/releases/download/v2.4.0/waitforit-linux_amd64
+RUN chmod +x /usr/local/bin/waitforit

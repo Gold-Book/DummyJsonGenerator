@@ -1,5 +1,11 @@
 version: '3'
 services:
+    localstack:
+      image: localstack/localstack
+      ports:
+        - 4567-4578:4567-4578
+        - 8080:8080
+
     local:
         build:
             context: .
@@ -7,12 +13,17 @@ services:
         working_dir: /root/dev
         volumes:
             - ../:/root/dev
-            - /var/run/docker.sock:/var/run/docker.sock # sam local required docker
+            - ./config/.aws/config:/root/.aws/config
+            - ./config/.aws/credentials:/root/.aws/credentials
+            - /var/run/docker.sock:/var/run/docker.sock # sam local required docker todo: docker in docker
         environment:
           - APPLICATION=$PWD/../application # ホスト側のdockerを使用しているため、localコンテナのディレクトリではなく、ホスト側のディレクトリがmountされる
         ports:
             - 3000:3000
+        depends_on:
+            - localstack
         command: ./container/shell/local.sh
+
     go:
         build:
             context: .

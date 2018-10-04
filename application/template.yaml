@@ -8,9 +8,18 @@ Resources:
       FunctionName: Register
       Handler: registerHandler
       Runtime: go1.x
+      AutoPublishAlias: live
+      Timeout: 10
+      MemorySize: 128
       Events:
         GetEvent:
           Type: Api
           Properties:
             Path: /
             Method: get
+
+  WatchLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${Register}
+      RetentionInDays: 1
