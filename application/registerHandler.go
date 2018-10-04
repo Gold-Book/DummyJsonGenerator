@@ -10,11 +10,10 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 
  log.Printf("Processing Lambda request %s\n", request.RequestContext.RequestID)
 
- return events.APIGatewayProxyResponse{
+ return events.APIGatewayProxyResponse {
   Body:       "Hello " + request.Body,
-  Headers:    map[string]string{ "x-custom-header" : "my custom header value" },
   StatusCode: 200,
- }, nil
+ }, error
 
 }
 

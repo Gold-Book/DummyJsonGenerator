@@ -13,3 +13,4 @@
 
 # dep ignore
 application/vendor
+application/dist/*

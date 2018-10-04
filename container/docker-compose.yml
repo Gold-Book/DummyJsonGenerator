@@ -17,7 +17,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile_go
-        working_dir: /go/src/DummyJsonGenerator/
+        working_dir: /go/src/DummyJsonGenerator/application
         volumes:
             - ../:/go/src/DummyJsonGenerator/
         command: bash /go/src/DummyJsonGenerator/container/shell/go.sh
