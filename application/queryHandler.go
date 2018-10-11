@@ -13,7 +13,7 @@ import (
  "github.com/aws/aws-sdk-go/service/s3"
 )
 
-const bucket = "test"
+const bucket = aws.String("test")
 const endpoint = "http://localstack:4572"
 
 func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
@@ -54,6 +54,7 @@ func putS3(data string) (error) {
     _, err := c.PutObject(&putData)
     return err
 }
+
 
 func response(code int, message string, err error) (events.APIGatewayProxyResponse, error) {
     return events.APIGatewayProxyResponse {
