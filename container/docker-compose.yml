@@ -13,8 +13,7 @@ services:
         working_dir: /root/dev
         volumes:
             - ../:/root/dev
-            - ./config/.aws/config:/root/.aws/config
-            - ./config/.aws/credentials:/root/.aws/credentials
+            - ./config/.aws:/root/.aws
             - /var/run/docker.sock:/var/run/docker.sock # sam local required docker todo: docker in docker
         environment:
           - APPLICATION=$PWD/../application # ホスト側のdockerを使用しているため、localコンテナのディレクトリではなく、ホスト側のディレクトリがmountされる

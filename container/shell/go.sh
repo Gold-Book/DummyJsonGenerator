@@ -1,5 +1,5 @@
 #!/bin/bash
-dep ensure -v -vendor-only=true
+dep ensure -v
 
 # https://gist.github.com/jmoiron/3241916
 
