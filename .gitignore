@@ -4,6 +4,8 @@
 *.dll
 *.so
 *.dylib
+*.lock
+package-lock.json
 
 # Test binary, build with `go test -c`
 *.test
@@ -14,3 +16,6 @@
 # dep ignore
 application/vendor
 application/dist/*
+
+front/node_modules
+front/build
